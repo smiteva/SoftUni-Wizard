@@ -20,6 +20,10 @@
         const score = document.querySelector('.score');
 
         gameStart.addEventListener('click', onGameStart);
+        document.addEventListener('keydown', onKeyDown);
+        document.addEventListener('keyup', onKeyUp);
+
+        let keys = {};
 
         function onGameStart() {
             gameStart.classList.add('hide');
@@ -30,6 +34,14 @@
             wizard.style.left = '300px';
             gameArea.appendChild(wizard);
 
+        }
+        function onKeyDown(e) {
+            e.preventDefault();
+            keys[e.code] = true;
+        }
+        function onKeyUp(e) {
+            e.preventDefault();
+            keys[e.code] = false;
         }
     </script>
 </body>
