@@ -2,15 +2,14 @@ body {
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.game-section {
-    
+.hide {
+    display: none;
 }
-
 .game-area {
     position: relative;
     background-color: lightskyblue;
     width: 100%;
-    height: 90vh;
+    height: 93vh;
     margin: 0;
 }
 .game-start {
