@@ -1,0 +1,2 @@
+# SoftUni-Wizard
+Simple game
