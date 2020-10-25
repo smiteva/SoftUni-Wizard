@@ -50,10 +50,16 @@
         function gameAction() {
             const wizard = document.querySelector('.wizard');
 
+            // Apply gravitation
+            let atBottom = player.height + player.y < gameArea.offsetHeight;
+            if (atBottom) {
+                player.y += game.speed / 2;
+            }
+
             if (keys.ArrowUp && player.y > 0) {
                 player.y -= game.speed * game.wizardMovementMultiplier;
             } 
-            if (keys.ArrowDown && player.height + player.y < gameArea.offsetHeight) {
+            if (keys.ArrowDown && atBottom) {
                 player.y += game.speed * game.wizardMovementMultiplier;
             }
             if (keys.ArrowRight && player.width + player.x < gameArea.offsetWidth) {
@@ -65,6 +71,7 @@
 
             wizard.style.top = player.y + 'px';
             wizard.style.left = player.x + 'px';
+
             window.requestAnimationFrame(gameAction);
         }
 
